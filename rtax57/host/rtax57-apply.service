@@ -1,0 +1,10 @@
+[Unit]
+Description=Re-apply RT-AX57 hardening and DNS policy
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=matthew
+Environment=HOME=/home/matthew
+ExecStart=/usr/local/bin/rtax57-apply.sh
